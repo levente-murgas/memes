@@ -6,6 +6,7 @@ import cv2
 import shutil
 from datetime import datetime
 import imagecollage
+import time
 
 # Set evaluation folder
 basepath = os.path.dirname(os.path.realpath(__file__))
@@ -269,5 +270,5 @@ print('Percentage images as nodes:',str(round(len(networknodes)/len(files)*100,2
 print('Number of components:',nx.number_connected_components(G))
 
 nx.draw(G,node_size=10,node_color='black')
-filename = os.path.join(basepath,"Graph"+str(datetime.now())+".pdf")
+filename = os.path.join(basepath,"Graph"+str(time.time())+".pdf")
 plt.savefig(filename, format="PDF")
